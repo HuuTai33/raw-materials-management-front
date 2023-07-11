@@ -9,6 +9,8 @@ import { RawMaterialComponent } from './features/raw-material/raw-material.compo
 import { RawMaterialDetailComponent } from './features/raw-material/raw-material-detail/raw-material-detail.component';
 import { RawMaterialEditComponent } from './features/raw-material/raw-material-edit/raw-material-edit.component';
 import { RawMaterialNewComponent } from './features/raw-material/raw-material-new/raw-material-new.component';
+import { FormsModule } from "@angular/forms";
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -20,10 +22,12 @@ import { RawMaterialNewComponent } from './features/raw-material/raw-material-ne
     RawMaterialEditComponent,
     RawMaterialNewComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        FormsModule,
+        HttpClientModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })
