@@ -1,1 +1,33 @@
-<p>raw-material-edit works!</p>
+<app-navbar></app-navbar>
+
+<div class="mt-4 row">
+  <div class="col"></div>
+
+  <div class="col-9">
+    <div class="form-group">
+      <label>Name</label>
+      <input type="text" class="form-control" placeholder="Name" [(ngModel)]="name">
+    </div>
+
+    <div class="form-group">
+      <label>Category</label>
+      <input type="text" class="form-control" placeholder="Category" [(ngModel)]="category">
+    </div>
+
+    <div class="form-group">
+      <label>Supplier</label>
+      <input type="text" class="form-control" placeholder="Supplier" [(ngModel)]="supplier">
+    </div>
+
+    <div class="d-flex justify-content-end">
+      <button type="submit" class="btn btn-primary"
+              [disabled]="name == '' || category == '' || supplier == ''"
+              (click)="create()">Save</button>
+      <button type="submit" class="btn btn-outline-secondary ml-2"
+              (click)="cancel()">Cancel</button>
+    </div>
+  </div>
+
+  <div class="col"></div>
+</div>
+

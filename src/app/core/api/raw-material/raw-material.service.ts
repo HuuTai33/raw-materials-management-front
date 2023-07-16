@@ -23,7 +23,7 @@ export class RawMaterialService {
   }
 
   updateRawMaterial(id: number, params: any): Observable<any> {
-    return this.httpClient.put(environment.apiUrl + '/raw_materials' + id, params);
+    return this.httpClient.put(environment.apiUrl + '/raw_materials/' + id, params);
   }
 
   deleteRawMaterial(id: number): Observable<any> {

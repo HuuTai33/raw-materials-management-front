@@ -18,6 +18,7 @@ export class RegisterComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    //TODO : Get session to check if connected
   }
 
   redirectConnect() {

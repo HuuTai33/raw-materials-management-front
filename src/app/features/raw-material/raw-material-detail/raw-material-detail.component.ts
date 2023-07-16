@@ -17,6 +17,8 @@ export class RawMaterialDetailComponent implements OnInit {
   }
 
   ngOnInit() {
+    //TODO : Get session to check if connected
+
     const id = this.route.snapshot.paramMap.get('id');
     this.rawmaterialService.getRawMaterial(Number(id)).subscribe(result => {
       this.rawmaterial = result;
