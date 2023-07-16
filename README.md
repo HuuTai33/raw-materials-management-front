@@ -3,7 +3,7 @@
 Launch project in local :
 
 * System dependencies
-  * `bundle install`
+  * `npm install`
 * Run the tests
   * `ng test`
 * Run the project
