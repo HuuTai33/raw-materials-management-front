@@ -1,1 +1,50 @@
-<p>raw-material-detail works!</p>
+<app-navbar></app-navbar>
+
+<div class="mt-4 row">
+  <div class="col"></div>
+
+  <div class="col-9">
+    <h1 class="mb-5">{{rawmaterial?.name}}</h1>
+
+    <div>
+      <div class="row mb-3">
+        <div class="col font-weight-bold">
+          Category
+        </div>
+        <div class="col">
+          {{rawmaterial?.category}}
+        </div>
+        <div class="col-7">
+        </div>
+      </div>
+
+      <div class="row mb-3">
+        <div class="col font-weight-bold">
+          Supplier
+        </div>
+        <div class="col">
+          {{rawmaterial?.supplier}}
+        </div>
+        <div class="col-7">
+        </div>
+      </div>
+
+      <div class="row mb-3">
+        <div class="col font-weight-bold">
+          Score
+        </div>
+        <div class="col">
+          {{rawmaterial?.supplier}}
+        </div>
+        <div class="col-7">
+        </div>
+      </div>
+    </div>
+
+    <button type="submit" class="btn btn-primary" (click)="edit()">Edit</button>
+    <button type="submit" class="btn btn-outline-danger ml-2" (click)="delete()">Delete</button>
+  </div>
+
+  <div class="col"></div>
+</div>
+
