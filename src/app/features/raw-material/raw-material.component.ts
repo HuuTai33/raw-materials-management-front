@@ -49,8 +49,8 @@ export class RawMaterialComponent implements OnInit {
     this.router.navigate(['/rawmaterials/new']);
   }
 
-  detail(id: number) {
-    this.router.navigate(['/rawmaterials/' + id]);
+  edit(id: number) {
+    this.router.navigate(['/rawmaterials/' + id + '/edit']);
   }
 
   delete(id: number) {

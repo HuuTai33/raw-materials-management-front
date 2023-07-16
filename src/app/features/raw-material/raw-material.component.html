@@ -33,12 +33,16 @@
       </thead>
       <tbody>
       <tr *ngFor="let rawMaterial of rawMaterials">
-        <td>{{rawMaterial.name}}</td>
+        <td>
+          <a href="/rawmaterials/{{rawMaterial.id}}">
+            {{rawMaterial.name}}
+          </a>
+        </td>
         <td>{{rawMaterial.category}}</td>
         <td>{{rawMaterial.supplier}}</td>
         <td>{{rawMaterial.score}}</td>
         <td>
-          <button class="btn btn-sm" (click)="detail(rawMaterial.id)">
+          <button class="btn btn-sm" (click)="edit(rawMaterial.id)">
             <img src="/assets/edit.png" width="25" height="25" alt="edit logo">
           </button>
           <button class="btn btn-sm" (click)="delete(rawMaterial.id)">

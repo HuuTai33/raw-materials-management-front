@@ -1,6 +1,9 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { RawMaterialComponent } from './raw-material.component';
+import {NavbarComponent} from "../shared/navbar/navbar.component";
+import {AppRoutingModule} from "../../app-routing.module";
+import {FormsModule} from "@angular/forms";
+import {HttpClientModule} from "@angular/common/http";
 
 describe('RawMaterialComponent', () => {
   let component: RawMaterialComponent;
@@ -8,7 +11,15 @@ describe('RawMaterialComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ RawMaterialComponent ]
+      declarations: [
+        RawMaterialComponent,
+        NavbarComponent
+      ],
+      imports: [
+        AppRoutingModule,
+        FormsModule,
+        HttpClientModule
+      ],
     })
     .compileComponents();
 
