@@ -37,7 +37,7 @@ export class RawMaterialEditComponent implements OnInit{
     this.router.navigate(['/rawmaterials/' + this.rawmaterial.id]);
   }
 
-  create() {
+  edit() {
     const params = {
       name: this.name,
       category: this.category,
