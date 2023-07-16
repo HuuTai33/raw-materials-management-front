@@ -11,6 +11,7 @@ import { RawMaterialEditComponent } from './features/raw-material/raw-material-e
 import { RawMaterialNewComponent } from './features/raw-material/raw-material-new/raw-material-new.component';
 import { FormsModule } from "@angular/forms";
 import { HttpClientModule } from '@angular/common/http';
+import { NavbarComponent } from './features/shared/navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { HttpClientModule } from '@angular/common/http';
     RawMaterialComponent,
     RawMaterialDetailComponent,
     RawMaterialEditComponent,
-    RawMaterialNewComponent
+    RawMaterialNewComponent,
+    NavbarComponent
   ],
     imports: [
         BrowserModule,

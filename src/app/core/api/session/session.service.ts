@@ -10,6 +10,10 @@ export class SessionService {
 
   constructor(private httpClient: HttpClient) { }
 
+  getSession(): Observable<any> {
+    return this.httpClient.get(environment.apiUrl + '/session');
+  }
+
   login(params: any): Observable<any> {
     return this.httpClient.post(environment.apiUrl + '/login', params);
   }

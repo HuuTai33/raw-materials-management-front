@@ -6,17 +6,17 @@
       <input class="form-control" placeholder="Email" type="text" [(ngModel)]="email" (keyup.enter)="connect()">
     </div>
     <div class="form-group mb-3">
-      <label>Mot de passe</label>
+      <label>Password</label>
       <input class="form-control" placeholder="Mot de passe" type="password" [(ngModel)]="password" (keyup.enter)="connect()">
     </div>
 
     <div *ngIf="errorText != ''" class="text-center text-danger mt-4 mb-4">{{errorText}}</div>
 
     <button class="btn btn-block"
-            (click)="redirectRegister()">S'inscire</button>
+            (click)="redirectRegister()">Register</button>
     <button class="btn btn-outline-success btn-block"
             [disabled]="email == '' || password == ''"
-            (click)="connect()">Se connecter</button>
+            (click)="connect()">Login</button>
   </div>
   <div class="col"></div>
 </div>

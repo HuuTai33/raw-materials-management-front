@@ -1,1 +1,52 @@
-<p>raw-material works!</p>
+<app-navbar></app-navbar>
+
+<div class="mt-4 row">
+  <div class="col"></div>
+
+  <div class="col-9">
+    <div class="mb-5">
+      <h1>Raw materials</h1>
+    </div>
+
+    <div class="mb-5">
+      <div class="d-flex justify-content-between">
+        <form class="form-inline">
+          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+        <div></div>
+        <button class="btn btn-sm btn-outline-info" type="button">New</button>
+      </div>
+    </div>
+
+    <table class="table table-striped">
+      <thead>
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Category</th>
+        <th scope="col">Supplier</th>
+        <th scope="col">Score</th>
+        <th scope="col">Actions</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let rawMaterial of rawMaterials">
+        <td>{{rawMaterial.name}}</td>
+        <td>{{rawMaterial.category}}</td>
+        <td>{{rawMaterial.supplier}}</td>
+        <td>{{rawMaterial.score}}</td>
+        <td>
+          <button class="btn btn-sm">
+            <img src="/assets/edit.png" width="25" height="25" alt="edit logo">
+          </button>
+          <button class="btn btn-sm">
+            <img src="/assets/delete.png" width="25" height="25" alt="delete logo">
+          </button>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="col"></div>
+</div>
