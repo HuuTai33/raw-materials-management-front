@@ -27,7 +27,7 @@ export class RawMaterialService {
   }
 
   deleteRawMaterial(id: number): Observable<any> {
-    return this.httpClient.delete(environment.apiUrl + '/raw_materials' + id);
+    return this.httpClient.delete(environment.apiUrl + '/raw_materials/' + id);
   }
 
 }
