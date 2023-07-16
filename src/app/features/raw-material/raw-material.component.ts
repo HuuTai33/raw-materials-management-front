@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {RawMaterialService} from "../../core/api/raw-material/raw-material.service";
-import {Router} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 
 @Component({
   selector: 'app-raw-material',
@@ -14,26 +14,35 @@ export class RawMaterialComponent implements OnInit {
   prevPage: number = 0;
   nextPage: number = 0;
   totalPages: number = 1;
+  searchName: string = '';
 
   constructor(private router: Router,
+              private route: ActivatedRoute,
               private rawmaterialService: RawMaterialService) {
   }
 
   ngOnInit(): void {
     //TODO : Get session to check if connected
 
-    this.getRawMaterials(this.currentPage);
+    this.route.queryParams.subscribe(params => {
+      this.searchName = params['name'];
+      this.getRawMaterials(this.currentPage, this.searchName);
+    });
   }
 
-  getRawMaterials(page: number) {
+  getRawMaterials(page: number, name: string) {
     this.currentPage = page;
-    this.rawmaterialService.getRawMaterials(page).subscribe(result => {
+    this.rawmaterialService.getRawMaterials(page, name).subscribe(result => {
       this.rawMaterials = result.rawmaterials;
       this.currentPage = result.page.page
       this.prevPage = result.page.prev
       this.nextPage = result.page.next
       this.totalPages = result.page.pages
     })
+  }
+
+  search() {
+    this.router.navigateByUrl('/rawmaterials?name=' + this.searchName);
   }
 
   create() {
@@ -46,7 +55,7 @@ export class RawMaterialComponent implements OnInit {
 
   delete(id: number) {
     this.rawmaterialService.deleteRawMaterial(id).subscribe(result => {
-      this.getRawMaterials(1);
+      this.getRawMaterials(1, this.searchName);
     });
   }
 

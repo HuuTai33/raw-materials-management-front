@@ -10,10 +10,12 @@
 
     <div class="mb-5">
       <div class="d-flex justify-content-between">
-        <form class="form-inline">
-          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-        </form>
+        <div class="form-inline">
+          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" [(ngModel)]="searchName">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit"
+                  (click)="search()"
+                  [disabled]="searchName == ''">Search</button>
+        </div>
         <div></div>
         <button class="btn btn-sm btn-outline-info" type="button" (click)="create()">New</button>
       </div>
@@ -50,15 +52,15 @@
     <nav>
       <ul class="pagination justify-content-center">
         <li class="page-item" [ngClass]="prevPage == null ? 'disabled' : ''">
-          <a class="page-link" (click)="getRawMaterials(prevPage)">Previous</a>
+          <a class="page-link" (click)="getRawMaterials(prevPage, searchName)">Previous</a>
         </li>
         <ng-container *ngFor="let page of [].constructor(totalPages); let i = index">
           <li class="page-item" [ngClass]="i+1 == currentPage ? 'active' : ''">
-            <a class="page-link" (click)="getRawMaterials(i+1)">{{i+1}}</a>
+            <a class="page-link" (click)="getRawMaterials(i+1, searchName)">{{i+1}}</a>
           </li>
         </ng-container>
         <li class="page-item" [ngClass]="nextPage == null ? 'disabled' : ''">
-          <a class="page-link" (click)="getRawMaterials(nextPage)">Next</a>
+          <a class="page-link" (click)="getRawMaterials(nextPage, searchName)">Next</a>
         </li>
       </ul>
     </nav>
