@@ -10,8 +10,8 @@ export class RawMaterialService {
 
   constructor(private httpClient: HttpClient) { }
 
-  getRawMaterials(): Observable<any> {
-    return this.httpClient.get(environment.apiUrl + '/raw_materials');
+  getRawMaterials(page: number): Observable<any> {
+    return this.httpClient.get(environment.apiUrl + '/raw_materials?page=' + page);
   }
 
   getRawMaterial(id: number): Observable<any> {

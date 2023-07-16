@@ -46,6 +46,22 @@
       </tr>
       </tbody>
     </table>
+
+    <nav>
+      <ul class="pagination justify-content-center">
+        <li class="page-item" [ngClass]="prevPage == null ? 'disabled' : ''">
+          <a class="page-link" (click)="getRawMaterials(prevPage)">Previous</a>
+        </li>
+        <ng-container *ngFor="let page of [].constructor(totalPages); let i = index">
+          <li class="page-item" [ngClass]="i+1 == currentPage ? 'active' : ''">
+            <a class="page-link" (click)="getRawMaterials(i+1)">{{i+1}}</a>
+          </li>
+        </ng-container>
+        <li class="page-item" [ngClass]="nextPage == null ? 'disabled' : ''">
+          <a class="page-link" (click)="getRawMaterials(nextPage)">Next</a>
+        </li>
+      </ul>
+    </nav>
   </div>
 
   <div class="col"></div>
