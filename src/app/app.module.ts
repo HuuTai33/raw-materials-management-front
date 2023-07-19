@@ -11,6 +11,7 @@ import { RawMaterialNewComponent } from './features/raw-material/raw-material-ne
 import { FormsModule } from "@angular/forms";
 import { HttpClientModule } from '@angular/common/http';
 import { NavbarComponent } from './features/shared/navbar/navbar.component';
+import {ApiModule} from "./core/api/api.module";
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { NavbarComponent } from './features/shared/navbar/navbar.component';
   ],
   imports: [
     BrowserModule,
+    ApiModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule
